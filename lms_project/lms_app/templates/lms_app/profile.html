@@ -1,0 +1,27 @@
+{% extends 'lms_app/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Profile Details</h2>
+    <table class="table table-bordered">
+        <tr><th>Username</th><td>{{ profile.user.username }}</td></tr>
+        <tr><th>Email</th><td>{{ profile.user.email }}</td></tr>
+        <tr><th>Mobile</th><td>{{ profile.user.mobile }}</td></tr>
+        <tr><th>First Name</th><td>{{ profile.first_name }}</td></tr>
+        <tr><th>Last Name</th><td>{{ profile.last_name }}</td></tr>
+        <tr><th>Father's Name</th><td>{{ profile.father_name }}</td></tr>
+        <tr><th>College Name</th><td>{{ profile.college_name }}</td></tr>
+        <tr><th>Course Name</th><td>{{ profile.course_name }}</td></tr>
+        <tr><th>Branch Name</th><td>{{ profile.branch_name }}</td></tr>
+        <tr><th>College Address</th><td>{{ profile.college_address }}</td></tr>
+        <tr><th>Student Address</th><td>{{ profile.student_address }}</td></tr>
+        <tr><th>Pin Code</th><td>{{ profile.pin_code }}</td></tr>
+        <tr><th>City</th><td>{{ profile.city }}</td></tr>
+    </table>
+    <a href="{% url 'update_profile' %}" class="btn btn-warning">Update Profile</a>
+    <a href="{% url 'change_password' %}" class="btn btn-secondary">Change Password</a>
+    <a href="{% url 'delete_account' %}" class="btn btn-danger">Delete Account</a>
+    <!-- <a href="{% url 'dashboard' %}" class="btn btn-primary">Go to Dashboard</a> -->
+    <a href="{% url 'logout' %}" class="btn btn-dark">Logout</a>
+</div>
+{% endblock %}

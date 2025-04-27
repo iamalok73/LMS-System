@@ -1,0 +1,14 @@
+{% extends 'lms_app/base.html' %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Welcome to LMS Platform!</h1>
+    <p class="lead">Learn new skills, grow your knowledge, and upgrade your career!</p>
+    
+    {% if user.is_authenticated %}
+        <p class="mt-4">Hello, <strong>{{ user.username }}</strong>! <br> Visit your <a href="{% url 'profile' %}">Profile</a> page to see your details.</p>
+    {% else %}
+        <a href="{% url 'register' %}" class="btn btn-primary mt-3 me-2">Register Now</a>
+        <a href="{% url 'login' %}" class="btn btn-success mt-3">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
